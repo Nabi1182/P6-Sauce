@@ -16,7 +16,6 @@ exports.createSauce = (req,res, next) =>{
 	})
 }
 //Renvoie un tableau de toutes les sauces de la base de données.
-
 exports.getSauce = (req,res, next) =>{
 	Sauces.find()
 	.then (sauce => res.status(200).json(sauce))
@@ -58,7 +57,8 @@ exports.updateOneSauce = (req, res, next) => {
 			res.status(400).json({ error })
 		})
 }
-		
+
+//route supprimer sauce
 exports.deleteSauce = (req, res, next) =>{
 
 	Sauces.findOne({_id: req.params.id})
